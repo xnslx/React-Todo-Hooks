@@ -24,15 +24,15 @@ const TodoList = () => {
             checked: false
         }
     ]
-    const [todo, setTodo] = useState(todoList);
-    console.log(todo)
-    const checkedHandler = () => {
-        setTodo({checked: true})
-    }
+
     return (
         <div>
             {todoList.map(item => (
-                <TodoListItem key={item.id} id={item.id} todo={item.text} checked={checkedHandler}/>
+                <TodoListItem 
+                    key={item.id} 
+                    id={item.id} 
+                    todo={item.text}
+                />
             ))}
         </div>
     )

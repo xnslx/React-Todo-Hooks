@@ -32,6 +32,8 @@ const TodoList = () => {
                     key={item.id} 
                     id={item.id} 
                     todo={item.text}
+                    todolist={todoList}
+                    index={item.index}
                 />
             ))}
         </div>

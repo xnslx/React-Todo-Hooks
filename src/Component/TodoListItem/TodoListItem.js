@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 
-const TodoListItem = ({id, todo, todolist, index}) => {
+const TodoListItem = ({id, todo, todolist}) => {
     const [check, setCheck] = useState(false);
     const [todoItem, setTodoItem] = useState(todolist)
-    console.log(todoItem)
+    // console.log(todoItem)
 
     const removeHandler = (index) => {
-        const updatedTodo = [...todolist];
-        updatedTodo.splice(index, 1);
+        const removedTodo = todoItem.splice(index, 1);
+        const updatedTodo = [...todoItem]
         setTodoItem(updatedTodo)
-        console.log(updatedTodo)
     }
     return (
         <ul key={id} style={{textDecoration: 'none', listStyle: 'none'}}>
@@ -20,7 +19,7 @@ const TodoListItem = ({id, todo, todolist, index}) => {
             <li style={{textDecoration: check.checked? 'line-through' : 'none'}}>
                 {todo}
             </li>
-            <button onClick={() => removeHandler(index)}>X</button>
+            <button onClick={() => removeHandler(todo.index)}>X</button>
         </ul>
     )
 };

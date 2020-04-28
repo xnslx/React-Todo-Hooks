@@ -33,7 +33,6 @@ const TodoList = () => {
                     id={item.id} 
                     todo={item.text}
                     todolist={todoList}
-                    index={item.index}
                 />
             ))}
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Todo from './Component/Todo/Todo';
 
@@ -26,11 +26,32 @@ const App = () => {
         checked: false
     }
 ]
+  const [todos, setTodos] = useState(todoList)
   
+  const toggleTodo = (index) => {
+    const newTodo = [...todos];
+    newTodo[index].checked = !newTodo[index].checked;
+    setTodos(newTodo);
+  }
+
+  const deleteTodo = (index) => {
+    const newTodo = [...todos];
+    newTodo.splice(index, 1);
+    setTodos(newTodo);
+  }
+
   return (
     <div className="App">
       <p>Todo List</p>
-      <Todo todolist={todoList}/>
+      {todos.map((todo,index) => (
+        <Todo 
+          todo={todo} 
+          key={index} 
+          index={index}
+          toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+        />
+      ))}
     </div>
   )
 }

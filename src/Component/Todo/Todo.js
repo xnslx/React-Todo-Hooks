@@ -1,15 +1,19 @@
-import React from 'react';
-import TodoItem from '../TodoItem/TodoItem';
+import React from 'react'
 
-const Todo = ({todolist}) => {
-    console.log(todolist)
+const Todo = ({todo, index, toggleTodo, deleteTodo}) => {
     return (
-        <ul>
-            {todolist.map((item,index) => (
-                <TodoItem todo={item} key={index} index={index}/>
-            ))}
-        </ul>
+        <>
+            <ul 
+                key={todo.index} 
+                style={{listStyle: 'none'}}>
+                <li style={{textDecoration: todo.checked? 'line-through' : 'none'}}>
+                    {todo.text}
+                </li>
+            </ul>
+            <input type="checkbox" checked={todo.checked}onClick={() => toggleTodo(index) }/>
+            <button onClick={() => deleteTodo(index)}>X</button>
+        </>
     )
-}
+};
 
 export default Todo;

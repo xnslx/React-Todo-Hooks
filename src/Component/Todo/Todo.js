@@ -10,7 +10,11 @@ const Todo = ({todo, index, toggleTodo, deleteTodo}) => {
                     {todo.text}
                 </li>
             </ul>
-            <input type="checkbox" checked={todo.checked}onClick={() => toggleTodo(index) }/>
+            <input 
+                type="checkbox" 
+                checked={todo.active}
+                onClick={() => toggleTodo(index)}
+            />
             <button onClick={() => deleteTodo(index)}>X</button>
         </>
     )

@@ -53,7 +53,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Todo List</h1>
+      <h1 style={{marginBottom: '40px'}}>Todo List</h1>
       <TodoForm addTodo={addTodo} checked={todos.checked}/>
       {todos.map((todo,index) => (
         <Todo 

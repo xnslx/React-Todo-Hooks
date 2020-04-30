@@ -44,7 +44,7 @@ const App = () => {
     const newTodo = [...todos, {text}];
     setTodos(newTodo);
   }
-  
+
   return (
     <div className="App">
       <p>Todo List</p>

@@ -12,7 +12,7 @@ const Todo = ({todo, index, toggleTodo, deleteTodo}) => {
             </ul>
             <input 
                 type="checkbox" 
-                checked={todo.active}
+                checked={todo.checked}
                 onClick={() => toggleTodo(index)}
             />
             <button onClick={() => deleteTodo(index)}>X</button>

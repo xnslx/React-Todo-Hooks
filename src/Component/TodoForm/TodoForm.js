@@ -4,8 +4,12 @@ const TodoForm = ({addTodo}) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleSubmit = (e) => {
-        addTodo(inputValue);
-        setInputValue('')
+        if(inputValue === '') {
+            e.preventDefault();
+        } else {
+            addTodo(inputValue);
+        }
+        setInputValue('');
     }
     return (
         <div>
@@ -13,8 +17,9 @@ const TodoForm = ({addTodo}) => {
                 type="text"
                 placeholder="Add todo..."
                 onChange={(e) => setInputValue(e.target.value)}
+                value={inputValue}
             />
-            <button onClick={() => handleSubmit()}>submit</button>
+            <button onClick={handleSubmit}>submit</button>
         </div>
     )
 };

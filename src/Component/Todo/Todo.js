@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react';
 
 const Todo = ({todo, index, toggleTodo, deleteTodo}) => {
+    console.log(todo)
     return (
         <>
             <ul 
@@ -13,7 +14,7 @@ const Todo = ({todo, index, toggleTodo, deleteTodo}) => {
             <input 
                 type="checkbox" 
                 checked={todo.checked}
-                onClick={() => toggleTodo(index)}
+                onChange={() => toggleTodo(index)}
             />
             <button onClick={() => deleteTodo(index)}>X</button>
         </>

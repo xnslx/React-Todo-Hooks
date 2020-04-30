@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Todo from './Component/Todo/Todo';
 import TodoForm from './Component/TodoForm/TodoForm';
+import { v4 as uuidv4 } from 'uuid';
 
 const App = () => {
   const todoList = [
@@ -41,14 +42,19 @@ const App = () => {
   }
 
   const addTodo = (text) => {
-    const newTodo = [...todos, {text}];
+    const updatedTodo = {
+      id: uuidv4(),
+      text: text,
+      checked:false
+    }
+    const newTodo = [...todos, updatedTodo];
     setTodos(newTodo);
   }
 
   return (
     <div className="App">
       <p>Todo List</p>
-      <TodoForm addTodo={addTodo}/>
+      <TodoForm addTodo={addTodo} checked={todos.checked}/>
       {todos.map((todo,index) => (
         <Todo 
           todo={todo} 
@@ -56,6 +62,7 @@ const App = () => {
           index={index}
           toggleTodo={toggleTodo}
           deleteTodo={deleteTodo}
+          // checked={todo.checked}
         />
       ))}
     </div>

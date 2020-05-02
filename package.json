@@ -12,7 +12,7 @@
         "react-scripts": "3.4.1",
         "uuid": "^8.0.0"
     },
-    "homepage": "https://xianliuidesigner.com",
+    "homepage": "https://xnslx.github.io",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",

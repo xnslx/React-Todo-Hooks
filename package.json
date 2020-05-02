@@ -12,7 +12,7 @@
         "react-scripts": "3.4.1",
         "uuid": "^8.0.0"
     },
-    "homepage": "https://xnslx.github.io",
+    "homepage": "xnslx.github.io/React-Todo-Hooks",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
